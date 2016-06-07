@@ -1,0 +1,35 @@
+<div class="container" ng-controller="ResultsCtrl as results">
+  <div class="row">
+    <div class="col-sm-12 counter_container" ng-controller="CounterCtrl as counter">
+      <h1>Timer</h1>
+      <div class="col-sm-6">
+        <label class="timer">{{ counter.timer }}</label>
+      </div>
+      <div class="col-sm-6">
+        <div>
+          <label>Inspection Time:</label>
+          <select class="inspect_time" ng-model="counter.inspectTime">
+            <option value="0">None</option>
+            <option value="5000">5 sec</option>
+            <option value="10000">10 sec</option>
+            <option value="15000">15 sec</option>
+          </select>
+        </div>
+        <button class="btn btn-success" ng-class="{ 'btn-warning': counter.fInspect }" ng-show="!counter.fCounting" ng-click="counter.inspect(counter.inspectTime)">Start</button>
+        <button class="btn btn-danger" ng-show="counter.fCounting" ng-click="counter.stop(); results.setData();">Stop</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12 results">
+      <canvas class="chart chart-line"
+              chart-data="results.data"
+              chart-labels="results.labels"
+              chart-series="results.series"
+              chart-legend="false">
+      </canvas>
+    </div>
+  </div>
+</div>

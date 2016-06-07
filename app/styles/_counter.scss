@@ -1,0 +1,23 @@
+.counter_container {
+
+    .timer {
+        display: block;
+        font-size: 5em;
+        color: lightgrey;
+    }
+
+    .inspect_time {
+        outline: none;
+        border: 0px;
+        background: none;
+        color: darkgrey;
+    }
+
+    button {
+        width: 100%;
+        font-size: 1.2em;
+        margin-top: 1em;
+        outline: none !important;
+        box-shadow: none;
+    }
+}
